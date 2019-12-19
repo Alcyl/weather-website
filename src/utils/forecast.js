@@ -8,8 +8,8 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to conncect to location services!', undefined);        
         } else if (body.error) {
             callback('Unable to find Coordinates. Try another search.', undefined);
-        } else {
-            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain.')
+        } else {        
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. The High is ' + body.daily.data[0].temperatureHigh + ' and the Low is ' + body.daily.data[0].temperatureLow + ' There is a ' + body.currently.precipProbability + '% chance of rain.');        
         }
     })
 }
